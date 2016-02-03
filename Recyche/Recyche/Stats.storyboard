@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="FZi-dR-Xvn">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Charts-->
+        <scene sceneID="MXD-QN-feJ">
+            <objects>
+                <viewController title="Charts" id="cET-ym-v4x" customClass="ChartsViewController" customModule="Recyche" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pK7-aS-6Ch"/>
+                        <viewControllerLayoutGuide type="bottom" id="jop-Nl-uLE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GJh-l7-7zh">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="aIb-Ae-Fij">
+                                <rect key="frame" x="16" y="8" width="288" height="316"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="9mb-7f-q93" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
+                                        <color key="backgroundColor" red="0.95294117649999999" green="0.96862745100000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="12a-tK-1jY">
+                                        <rect key="frame" x="0.0" y="288" width="288" height="29"/>
+                                        <segments>
+                                            <segment title="Week"/>
+                                            <segment title="Month"/>
+                                            <segment title="Year"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.08235294118" green="0.47058823529999999" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="segmentControlChanged:" destination="cET-ym-v4x" eventType="valueChanged" id="aV3-Gh-yJU"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="12a-tK-1jY" firstAttribute="top" secondItem="9mb-7f-q93" secondAttribute="bottom" id="ZtP-iX-snL"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="f1v-IN-Td4">
+                                <rect key="frame" x="16" y="370" width="304" height="29"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h33-gl-gYW">
+                                        <rect key="frame" x="82" y="0.0" width="140" height="29"/>
+                                        <color key="backgroundColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="Fu7-82-n23"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="12"/>
+                                        <state key="normal" title="PRODUCT LIST">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Gkq-nT-skO" kind="push" identifier="statsToProductListSegue" id="fd8-Hq-IgA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294117649999999" green="0.96862745100000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="f1v-IN-Td4" firstAttribute="top" secondItem="aIb-Ae-Fij" secondAttribute="bottom" constant="46" id="P81-0P-oWK"/>
+                            <constraint firstAttribute="trailing" secondItem="f1v-IN-Td4" secondAttribute="trailing" id="ZgZ-QI-wBJ"/>
+                            <constraint firstItem="aIb-Ae-Fij" firstAttribute="top" secondItem="pK7-aS-6Ch" secondAttribute="bottom" constant="8" symbolic="YES" id="boR-sY-hfc"/>
+                            <constraint firstItem="aIb-Ae-Fij" firstAttribute="trailing" secondItem="GJh-l7-7zh" secondAttribute="trailingMargin" id="qbk-7s-eP6"/>
+                            <constraint firstItem="jop-Nl-uLE" firstAttribute="top" secondItem="f1v-IN-Td4" secondAttribute="bottom" constant="56" id="wCq-Od-KA9"/>
+                            <constraint firstItem="aIb-Ae-Fij" firstAttribute="leading" secondItem="GJh-l7-7zh" secondAttribute="leadingMargin" id="xYk-0x-fUN"/>
+                            <constraint firstItem="aIb-Ae-Fij" firstAttribute="leading" secondItem="f1v-IN-Td4" secondAttribute="leading" id="xf4-hf-oHL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Stats" id="glS-Ak-S1b">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="wzf-jj-qwC">
+                            <connections>
+                                <action selector="shareCharts:" destination="cET-ym-v4x" id="hbV-go-GaF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="pieChartView" destination="9mb-7f-q93" id="2UM-bF-Szt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6fi-8g-eYb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1655" y="1181"/>
+        </scene>
+        <!--List Of Products-->
+        <scene sceneID="QvK-fR-74M">
+            <objects>
+                <viewController title="List Of Products" id="Gkq-nT-skO" customClass="ListOfProductsViewController" customModule="Recyche" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Umh-K8-gTa"/>
+                        <viewControllerLayoutGuide type="bottom" id="AXT-ll-lh1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lou-i4-14P">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l2C-YS-iDB">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.95294117649999999" green="0.96862745100000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" rowHeight="44" id="f8l-HZ-ruc" customClass="ProductTableViewCell" customModule="Recyche" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f8l-HZ-ruc" id="8sX-Vf-ZCm">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Z9i-TQ-1yB">
+                                                    <rect key="frame" x="8" y="8" width="304" height="27"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Unknown" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="1c0-um-xWG">
+                                                            <rect key="frame" x="0.0" y="4" width="148" height="19"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="Oct 13, 2015" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5GA-tQ-S0I">
+                                                            <rect key="frame" x="156" y="5" width="148" height="17"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="1c0-um-xWG" firstAttribute="baseline" secondItem="5GA-tQ-S0I" secondAttribute="firstBaseline" id="Gt9-Av-sad"/>
+                                                        <constraint firstItem="1c0-um-xWG" firstAttribute="baseline" secondItem="5GA-tQ-S0I" secondAttribute="baseline" id="HbJ-Vh-sCy"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Z9i-TQ-1yB" firstAttribute="leading" secondItem="8sX-Vf-ZCm" secondAttribute="leadingMargin" id="UCh-ps-czg"/>
+                                                <constraint firstItem="Z9i-TQ-1yB" firstAttribute="top" secondItem="8sX-Vf-ZCm" secondAttribute="topMargin" id="eND-kd-qsC"/>
+                                                <constraint firstItem="Z9i-TQ-1yB" firstAttribute="trailing" secondItem="8sX-Vf-ZCm" secondAttribute="trailingMargin" id="n6d-XJ-7gv"/>
+                                                <constraint firstItem="Z9i-TQ-1yB" firstAttribute="bottom" secondItem="8sX-Vf-ZCm" secondAttribute="bottomMargin" id="t7y-88-CPi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.95294117649999999" green="0.96862745100000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="5GA-tQ-S0I" id="LiD-hh-3hs"/>
+                                            <outlet property="nameLabel" destination="1c0-um-xWG" id="rXK-xb-PcD"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Gkq-nT-skO" id="OpN-X0-7w2"/>
+                                    <outlet property="delegate" destination="Gkq-nT-skO" id="ocG-Np-u81"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294117649999999" green="0.96862745100000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="l2C-YS-iDB" firstAttribute="leading" secondItem="Lou-i4-14P" secondAttribute="leading" id="QQO-hR-wku"/>
+                            <constraint firstAttribute="trailing" secondItem="l2C-YS-iDB" secondAttribute="trailing" id="S7Y-cx-Rf3"/>
+                            <constraint firstItem="l2C-YS-iDB" firstAttribute="top" secondItem="Umh-K8-gTa" secondAttribute="bottom" id="jO1-hN-DTH"/>
+                            <constraint firstItem="AXT-ll-lh1" firstAttribute="top" secondItem="l2C-YS-iDB" secondAttribute="bottom" id="sy5-pN-NrS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="List of Products" id="Ugn-tN-4eZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OGv-cS-b9X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2189" y="1181"/>
+        </scene>
+        <!--Stats-->
+        <scene sceneID="MJZ-w0-IGc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FZi-dR-Xvn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Stats" image="charticon" id="ivA-Cd-cFf"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO">
+                        <color key="tintColor" red="0.082352941176470587" green="0.47058823529411764" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
+                    </simulatedTabBarMetrics>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="ua1-ap-D7Z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.082352941176470587" green="0.47058823529411764" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cET-ym-v4x" kind="relationship" relationship="rootViewController" id="plY-CH-o52"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YfP-r2-VhF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1131" y="1181"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="charticon" width="25" height="25"/>
+    </resources>
+</document>
