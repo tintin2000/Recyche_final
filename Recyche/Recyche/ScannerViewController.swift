@@ -80,19 +80,19 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
-        if (FBSDKAccessToken.currentAccessToken() == nil) {
-            performSegueWithIdentifier("toLoginSegue", sender: self)
-        }
-        else {
-            // Need some error notification
-        }
-        
-        if firstTimeCheck {
+//        if (FBSDKAccessToken.currentAccessToken() == nil) {
+//            performSegueWithIdentifier("toLoginSegue", sender: self)
+//        }
+//        else {
+//            // Need some error notification
+//        }
+//        
+//        if firstTimeCheck {
             if !didFinishLaunchingOnce() {
                 showInstructions(self)
             }
-            firstTimeCheck = false
-        }
+//            firstTimeCheck = false
+//        }
     }
 
     

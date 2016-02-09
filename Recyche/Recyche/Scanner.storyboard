@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="efI-zX-duW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="efI-zX-duW">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -17,19 +17,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYs-o2-ife">
+                                <rect key="frame" x="149" y="418" width="28" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="b11-9b-0Fr"/>
+                                    <constraint firstAttribute="width" constant="28" id="cVd-gB-vY8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ao-Nd-y2E">
+                                <rect key="frame" x="52" y="457" width="222" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="jNi-b2-Mpj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Go To App without Signup">
+                                    <color key="titleColor" red="0.070588235289999995" green="0.35686274509999999" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToAppWithoutSignupButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MuT-L5-R26"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Tmq-dv-Q4o">
-                                <rect key="frame" x="43" y="98" width="235" height="121"/>
+                                <rect key="frame" x="51" y="127" width="219" height="181"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recychelogo" translatesAutoresizingMaskIntoConstraints="NO" id="zRg-V2-itx">
-                                        <rect key="frame" x="105" y="0.0" width="25" height="25"/>
+                                        <rect key="frame" x="72" y="0.0" width="75" height="75"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="Nlw-cD-9Ak"/>
-                                            <constraint firstAttribute="width" constant="25" id="QK8-2O-kHI"/>
+                                            <constraint firstAttribute="height" constant="75" id="A6h-y7-75d"/>
+                                            <constraint firstAttribute="width" constant="75" id="YmS-gJ-Uw2"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RECYCHE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPi-ta-cD6">
-                                        <rect key="frame" x="0.0" y="65" width="235" height="56"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="48"/>
+                                        <rect key="frame" x="0.0" y="115" width="219" height="66"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="48"/>
                                         <color key="textColor" red="0.082352941176470587" green="0.47058823529411764" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -38,8 +61,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.96862745100000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Tmq-dv-Q4o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6oz-3x-cGE"/>
-                            <constraint firstItem="Tmq-dv-Q4o" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="78" id="f7P-6N-cM9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0Ao-Nd-y2E" secondAttribute="trailing" constant="30" id="5a3-Uz-Seq"/>
+                            <constraint firstItem="Tmq-dv-Q4o" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="107" id="6dK-ll-QZn"/>
+                            <constraint firstItem="0Ao-Nd-y2E" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="36" id="6ga-XU-d6K"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0Ao-Nd-y2E" secondAttribute="bottom" constant="81" id="UMH-Fw-rMz"/>
+                            <constraint firstItem="Tmq-dv-Q4o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cQz-FZ-yoh"/>
+                            <constraint firstItem="wYs-o2-ife" firstAttribute="centerX" secondItem="0Ao-Nd-y2E" secondAttribute="centerX" id="h2Y-Mj-4dN"/>
+                            <constraint firstItem="0Ao-Nd-y2E" firstAttribute="top" secondItem="wYs-o2-ife" secondAttribute="bottom" constant="8" symbolic="YES" id="xRh-XO-GHf"/>
                         </constraints>
                     </view>
                     <connections>
@@ -609,6 +637,6 @@
         <image name="scannericon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4ul-7p-4qU"/>
+        <segue reference="m8x-lW-tSk"/>
     </inferredMetricsTieBreakers>
 </document>

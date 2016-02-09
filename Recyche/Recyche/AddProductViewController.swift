@@ -70,8 +70,8 @@ class AddProductViewController: UIViewController, UIPickerViewDelegate, UIImageP
     let container = CKContainer.defaultContainer()
     let publicData = container.publicCloudDatabase
     
-    let productToVerify = CKRecord(recordType: "Verification", recordID: CKRecordID(recordName: "\(scannedUPC)_\(material)"))
-    productToVerify.setValue(NSUserDefaults.standardUserDefaults().valueForKey("id") as! String, forKey: "user1")
+//    let productToVerify = CKRecord(recordType: "Verification", recordID: CKRecordID(recordName: "\(scannedUPC)_\(material)"))
+//    productToVerify.setValue(NSUserDefaults.standardUserDefaults().valueForKey("id") as! String, forKey: "user1")
     
     let product = CKRecord(recordType: "Product", recordID: CKRecordID(recordName: scannedUPC))
     product.setValue(material, forKey: "material")
