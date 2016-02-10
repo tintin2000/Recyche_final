@@ -69,11 +69,14 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        
         if captureSession != nil {
             restartScanner()
         }
         
         setupScanner()
+        
+        
     }
     
     
@@ -135,51 +138,34 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         locationManager.stopUpdatingLocation()
-        
         guard let currentLocation = locations.first else
         {
-            
             return
         }
         CLGeocoder().reverseGeocodeLocation(currentLocation) { (placemarks, error) -> Void in
             guard let _placemark = placemarks?.first else
             {
-                
                 return
             }
             self.placemark = _placemark
             info_placemark = _placemark
             
-            
-            
             if  let cityInfo = self.placemark.locality{
-                
                 var cityInfoCopy: Int
-                
-                if cityToFind.contains(cityInfo)
-                {
-                    
+                if cityToFind.contains(cityInfo){
                     cityInfoCopy = 1
-                    
                 }  else if cityToFind6.contains(cityInfo){
-                    
                     cityInfoCopy =  6
-                    
                 } else {
-                    
                     cityInfoCopy =  0
                 }
                 
                 let defaults = NSUserDefaults.standardUserDefaults()
                 defaults.setInteger(cityInfoCopy, forKey: "cityInfoCopy")
                 defaults.setObject(self.placemark.locality, forKey: "userCity")
-                
-                
                 print(cityInfoCopy)
             }
-            
         }
-        
     }
     
     
@@ -246,6 +232,10 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     // MARK: - Class Functions
     
     func setupScanner() {
+        
+          if Reachability.isConnectedToNetwork() == true {
+            
+            
         self.captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         
         var error:NSError?
@@ -286,6 +276,21 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         
         view.addSubview(qrCodeFrameView!)
         view.bringSubviewToFront(qrCodeFrameView!)
+            
+            
+          }   else {
+
+                let alert = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet." , preferredStyle: .Alert)
+                let action = UIAlertAction(title: "OK", style: .Default) { _ in
+                    // Put here any code that you would like to execute when
+                    // the user taps that OK button (may be empty in your case if that's just
+                    // an informative alert)
+                }
+                alert.addAction(action)
+                self.presentViewController(alert, animated: true){}
+                
+            }
+
 
     }
     
@@ -325,9 +330,24 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     }
     
     func restartScanner() {
+        
+          if Reachability.isConnectedToNetwork() == true {
+        
         if !captureSession!.running {
             captureSession!.startRunning()
             qrCodeFrameView?.frame = CGRectZero
+        }
+        else {
+            
+            let alert = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet." , preferredStyle: .Alert)
+            let action = UIAlertAction(title: "OK", style: .Default) { _ in
+                // Put here any code that you would like to execute when
+                // the user taps that OK button (may be empty in your case if that's just
+                // an informative alert)
+            }
+            alert.addAction(action)
+            self.presentViewController(alert, animated: true){}
+            }
         }
     }
     
