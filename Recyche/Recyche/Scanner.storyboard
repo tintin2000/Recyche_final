@@ -1,56 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="efI-zX-duW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="efI-zX-duW">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Recyche" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Tmq-dv-Q4o">
-                                <rect key="frame" x="43" y="98" width="235" height="121"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recychelogo" translatesAutoresizingMaskIntoConstraints="NO" id="zRg-V2-itx">
-                                        <rect key="frame" x="105" y="0.0" width="25" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="Nlw-cD-9Ak"/>
-                                            <constraint firstAttribute="width" constant="25" id="QK8-2O-kHI"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RECYCHE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPi-ta-cD6">
-                                        <rect key="frame" x="0.0" y="65" width="235" height="56"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="48"/>
-                                        <color key="textColor" red="0.082352941176470587" green="0.47058823529411764" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.95294117649999999" green="0.96862745100000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="Tmq-dv-Q4o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6oz-3x-cGE"/>
-                            <constraint firstItem="Tmq-dv-Q4o" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="78" id="f7P-6N-cM9"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <segue destination="CnM-GH-VKc" kind="unwind" identifier="unwindLoginSegue" unwindAction="unwindViewController:" id="Xdo-DE-KfV"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="CnM-GH-VKc" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="2587" y="-293"/>
-        </scene>
         <!--Scanner-->
         <scene sceneID="ui6-zt-kDR">
             <objects>
@@ -129,11 +83,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Scanner" id="M1B-uq-doa">
                         <barButtonItem key="backBarButtonItem" title="Scanner" id="pdW-Ws-yis"/>
-                        <barButtonItem key="rightBarButtonItem" image="User Male" id="3fa-Pu-f0V">
-                            <connections>
-                                <segue destination="j5d-wh-yka" kind="push" id="tH4-SU-bLO"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="instructionBanner" destination="a8K-Iv-lN7" id="ltO-WR-MKL"/>
@@ -142,7 +91,6 @@
                         <outlet property="loadingView" destination="ehg-fN-8ZP" id="GDo-Su-ElN"/>
                         <outlet property="torchButton" destination="cpJ-PL-VcQ" id="VJI-1Q-a0H"/>
                         <outlet property="videoView" destination="FZG-JH-UZc" id="TDI-Qp-mf1"/>
-                        <segue destination="BYZ-38-t0r" kind="modal" identifier="toLoginSegue" id="FNM-gk-4f2"/>
                         <segue destination="1PX-ug-F7f" kind="push" identifier="toProductInfoSegue" id="m8x-lW-tSk"/>
                         <segue destination="LNm-kN-zp5" kind="push" identifier="toAddProductSegue" id="XTR-ZO-iHe"/>
                     </connections>
@@ -276,28 +224,28 @@
                                             <constraint firstAttribute="height" constant="160" id="QwY-YF-JXW"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DmB-yO-adh">
-                                        <rect key="frame" x="94" y="170" width="100" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" ambiguous="YES" misplaced="YES" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DmB-yO-adh">
+                                        <rect key="frame" x="95" y="170" width="100" height="21"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Te2-91-V13">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Te2-91-V13">
                                         <rect key="frame" x="127" y="201" width="35" height="20"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Italic" family="Avenir Next" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0Ir-hQ-L5P">
-                                        <rect key="frame" x="75" y="231" width="138" height="24"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" ambiguous="YES" misplaced="YES" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0Ir-hQ-L5P">
+                                        <rect key="frame" x="76" y="230" width="137" height="24"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="255" text="material" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvF-ei-r5Y">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="255" ambiguous="YES" misplaced="YES" text="material" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvF-ei-r5Y">
                                                 <rect key="frame" x="0.0" y="0.0" width="65" height="24"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                 <color key="textColor" red="0.14901960780000001" green="0.43137254899999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="257" horizontalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTj-6F-q2m">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="257" horizontalCompressionResistancePriority="751" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTj-6F-q2m">
                                                 <rect key="frame" x="73" y="0.0" width="65" height="24"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -305,11 +253,11 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZRs-a6-MCN">
-                                        <rect key="frame" x="0.0" y="265" width="288" height="174"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZRs-a6-MCN">
+                                        <rect key="frame" x="0.0" y="264" width="288" height="176"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JSe-WK-YSc">
-                                                <rect key="frame" x="0.0" y="0.0" width="288" height="174"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" scrollEnabled="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JSe-WK-YSc">
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="176"/>
                                                 <attributedString key="attributedText"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
@@ -348,7 +296,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DFT-aG-ReP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2587" y="1646"/>
+            <point key="canvasLocation" x="2095" y="1406"/>
         </scene>
         <!--Add Product-->
         <scene sceneID="EfU-gg-9oX">
@@ -560,7 +508,7 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2587" y="818"/>
+            <point key="canvasLocation" x="2217" y="402"/>
         </scene>
         <!--Scanner-->
         <scene sceneID="Jj7-lv-Ky2">
@@ -586,26 +534,14 @@
             </objects>
             <point key="canvasLocation" x="1131" y="402"/>
         </scene>
-        <!--Profile-->
-        <scene sceneID="d9B-TS-4Mz">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Profile" id="j5d-wh-yka" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="KiS-fb-lwv"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R2F-iW-ROF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1969" y="-563"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Delete" width="25" height="25"/>
         <image name="Greentech Filled" width="32" height="32"/>
         <image name="Info" width="25" height="25"/>
         <image name="NoImage" width="500" height="500"/>
-        <image name="User Male" width="25" height="25"/>
         <image name="barcode" width="87" height="64"/>
         <image name="helpicon" width="22" height="22"/>
-        <image name="recychelogo" width="75" height="75"/>
         <image name="scannericon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>

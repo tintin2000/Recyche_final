@@ -29,7 +29,6 @@
 		FA5D809E1C0CB1340047080F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5D809D1C0CB1340047080F /* CloudKit.framework */; };
 		FABC01021BC6DE0800B3048A /* RecycleInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC01011BC6DE0800B3048A /* RecycleInformation.swift */; };
 		FABD2D821BCB37AB003C5464 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD2D811BCB37AA003C5464 /* ProductTableViewCell.swift */; };
-		FAE29D851BBB6412003325DA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE29D841BBB6412003325DA /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -74,7 +73,6 @@
 		FA5D809D1C0CB1340047080F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		FABC01011BC6DE0800B3048A /* RecycleInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecycleInformation.swift; sourceTree = "<group>"; };
 		FABD2D811BCB37AA003C5464 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
-		FAE29D841BBB6412003325DA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +158,6 @@
 		FA1BAEC91BAF15B200D24788 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FAE29D841BBB6412003325DA /* LoginViewController.swift */,
 				FA1BAECA1BAF15C600D24788 /* ScannerViewController.swift */,
 				FA1BAECE1BAF160600D24788 /* AddProductViewController.swift */,
 				FA1BAECC1BAF15FB00D24788 /* ProductInfoViewController.swift */,
@@ -325,7 +322,6 @@
 				FA124BFB1BD3484500913142 /* ProfileTableViewController.swift in Sources */,
 				7CCEA0191BADB48A00F6D423 /* Recyche.xcdatamodeld in Sources */,
 				FA1BAECD1BAF15FB00D24788 /* ProductInfoViewController.swift in Sources */,
-				FAE29D851BBB6412003325DA /* LoginViewController.swift in Sources */,
 				FA1BAECB1BAF15C600D24788 /* ScannerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
