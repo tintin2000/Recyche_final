@@ -8,8 +8,6 @@
 
 import UIKit
 import AVFoundation
-import FBSDKCoreKit
-import FBSDKLoginKit
 import CloudKit
 import CoreLocation
 
@@ -23,11 +21,9 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     var scannedProduct: CKRecord!
     var barcodeScanned:((String) ->())?
     var firstTimeCheck = false
-    
-    
+	
     let locationManager = CLLocationManager()
     var placemark: CLPlacemark!
-    
     
     @IBOutlet weak var videoView:UIView!
     @IBOutlet weak var instructionBanner: UILabel!
@@ -79,13 +75,6 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-
-        if (FBSDKAccessToken.currentAccessToken() == nil) {
-            performSegueWithIdentifier("toLoginSegue", sender: self)
-        }
-        else {
-            // Need some error notification
-        }
         
         if firstTimeCheck {
             if !didFinishLaunchingOnce() {

@@ -85,19 +85,11 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Recyche/Alamofire.framework"
-  install_framework "Pods-Recyche/Bolts.framework"
   install_framework "Pods-Recyche/Charts.framework"
-  install_framework "Pods-Recyche/FBSDKCoreKit.framework"
-  install_framework "Pods-Recyche/FBSDKLoginKit.framework"
-  install_framework "Pods-Recyche/FBSDKShareKit.framework"
   install_framework "Pods-Recyche/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Recyche/Alamofire.framework"
-  install_framework "Pods-Recyche/Bolts.framework"
   install_framework "Pods-Recyche/Charts.framework"
-  install_framework "Pods-Recyche/FBSDKCoreKit.framework"
-  install_framework "Pods-Recyche/FBSDKLoginKit.framework"
-  install_framework "Pods-Recyche/FBSDKShareKit.framework"
   install_framework "Pods-Recyche/SwiftyJSON.framework"
 fi
