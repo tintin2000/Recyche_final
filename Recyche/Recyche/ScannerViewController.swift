@@ -265,7 +265,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         videoPreviewLayer?.videoGravity = AVLayerVideoGravityResize
         videoPreviewLayer?.frame = videoView.layer.bounds
         videoView.layer.insertSublayer(videoPreviewLayer!, below: instructionBanner.layer)
-        videoView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "restartScanner"))
+        videoView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ScannerViewController.restartScanner)))
         
         captureSession?.startRunning()
         

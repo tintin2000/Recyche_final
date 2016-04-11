@@ -10,8 +10,12 @@ import UIKit
 
 class ListOfProductsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var totalProducts: UIView!
     var products: [Product]!
-
+    var someDict = [Int: String]()
+    
+ 
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -19,8 +23,21 @@ class ListOfProductsViewController: UIViewController, UITableViewDataSource, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let theHeight = view.frame.size.height
 
         // Do any additional setup after loading the view.
+        totalProducts.frame = CGRect(x: 0, y: theHeight - 50 , width: self.view.frame.width, height: 50 )
+        
+        for product in products
+            
+        {
+            let materialItem = (code: materialForCode(product.material!))
+            print("this" ,materialItem)
+        }
+        
+        
+        
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
