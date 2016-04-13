@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import GoogleMobileAds
+
 
 class ListOfProductsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var totalProducts: UIView!
+    @IBOutlet weak var bannerView: GADBannerView!
+
     var products: [Product]!
     var someDict = [Int: String]()
     
@@ -19,15 +22,20 @@ class ListOfProductsViewController: UIViewController, UITableViewDataSource, UIT
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+
+
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let theHeight = view.frame.size.height
+      
 
         // Do any additional setup after loading the view.
-        totalProducts.frame = CGRect(x: 0, y: theHeight - 50 , width: self.view.frame.width, height: 50 )
+        bannerView.adUnitID = "ca-app-pub-7645740474114618/9505580289"
+        bannerView.rootViewController = self
+        bannerView.loadRequest(GADRequest())
         
         for product in products
             

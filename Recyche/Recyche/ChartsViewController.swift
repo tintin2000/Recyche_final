@@ -9,13 +9,15 @@
 import UIKit
 import CoreData
 import Charts
+import GoogleMobileAds
 
 
 class ChartsViewController: UIViewController  {
     
     var products: [Product]!
-
-    @IBOutlet weak var pieChartView: PieChartView!
+    
+    @IBOutlet weak var bannerView: GADBannerView!
+        @IBOutlet weak var pieChartView: PieChartView!
 
     
     
@@ -30,24 +32,36 @@ class ChartsViewController: UIViewController  {
         super.viewDidLoad()
         
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-Medium", size: 17)!]
+    
+     print("Google Mobile Ads SDK version: " + GADRequest.sdkVersion())
+        bannerView.adUnitID = "ca-app-pub-7645740474114618/8624276289"
+        bannerView.rootViewController = self
+        bannerView.loadRequest(GADRequest())
+       
     }
     
     @IBAction func shareCharts(sender: UIBarButtonItem) {
         
-        let image = pieChartView.getChartImage(transparent:true)
+        let textToShare = "My Recyling Chart from Recyche , Check out the App"
+         let image = pieChartView.getChartImage(transparent:true)
+        if let myWebsite =  NSURL(string: "https://itunes.apple.com/us/app/recyche/id1048809737?mt=8") {
+       
         let activityController = UIActivityViewController(activityItems:
-            ["My Recyling Chart from Recyche", image], applicationActivities: nil)
-        
-        self.presentViewController(activityController, animated: true,
-            completion: nil)
+            [textToShare, myWebsite, image!], applicationActivities: nil)
+            self.presentViewController(activityController, animated: true,
+                                       completion: nil)
+        }
+       
     }
 
     @IBAction func segmentControlChanged(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
             setChartData(.WeekOfYear)
+            
         case 1:
             setChartData(.Month)
+            
         case 2:
             setChartData(.Year)
         default:

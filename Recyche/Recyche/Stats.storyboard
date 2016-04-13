@@ -19,6 +19,14 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZhT-mN-8GI" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="405" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="L7L-Zp-KI1"/>
+                                    <constraint firstAttribute="width" constant="320" id="UZi-Z3-JPi"/>
+                                </constraints>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="aIb-Ae-Fij">
                                 <rect key="frame" x="16" y="8" width="288" height="316"/>
                                 <subviews>
@@ -44,7 +52,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="f1v-IN-Td4">
-                                <rect key="frame" x="16" y="370" width="304" height="29"/>
+                                <rect key="frame" x="16" y="350" width="304" height="29"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h33-gl-gYW">
                                         <rect key="frame" x="82" y="0.0" width="140" height="29"/>
@@ -65,13 +73,17 @@
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.96862745100000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="f1v-IN-Td4" firstAttribute="top" secondItem="aIb-Ae-Fij" secondAttribute="bottom" constant="46" id="P81-0P-oWK"/>
+                            <constraint firstItem="jop-Nl-uLE" firstAttribute="top" secondItem="ZhT-mN-8GI" secondAttribute="bottom" id="Kky-RC-r74"/>
+                            <constraint firstItem="ZhT-mN-8GI" firstAttribute="trailing" secondItem="f1v-IN-Td4" secondAttribute="trailing" id="LEx-Rp-Np2"/>
+                            <constraint firstItem="f1v-IN-Td4" firstAttribute="top" secondItem="aIb-Ae-Fij" secondAttribute="bottom" constant="26" id="P81-0P-oWK"/>
                             <constraint firstAttribute="trailing" secondItem="f1v-IN-Td4" secondAttribute="trailing" id="ZgZ-QI-wBJ"/>
                             <constraint firstItem="aIb-Ae-Fij" firstAttribute="top" secondItem="pK7-aS-6Ch" secondAttribute="bottom" constant="8" symbolic="YES" id="boR-sY-hfc"/>
+                            <constraint firstItem="ZhT-mN-8GI" firstAttribute="centerX" secondItem="GJh-l7-7zh" secondAttribute="centerX" id="jN5-yJ-jm2"/>
                             <constraint firstItem="aIb-Ae-Fij" firstAttribute="trailing" secondItem="GJh-l7-7zh" secondAttribute="trailingMargin" id="qbk-7s-eP6"/>
-                            <constraint firstItem="jop-Nl-uLE" firstAttribute="top" secondItem="f1v-IN-Td4" secondAttribute="bottom" constant="56" id="wCq-Od-KA9"/>
+                            <constraint firstItem="jop-Nl-uLE" firstAttribute="top" secondItem="f1v-IN-Td4" secondAttribute="bottom" constant="76" id="wCq-Od-KA9"/>
                             <constraint firstItem="aIb-Ae-Fij" firstAttribute="leading" secondItem="GJh-l7-7zh" secondAttribute="leadingMargin" id="xYk-0x-fUN"/>
                             <constraint firstItem="aIb-Ae-Fij" firstAttribute="leading" secondItem="f1v-IN-Td4" secondAttribute="leading" id="xf4-hf-oHL"/>
+                            <constraint firstItem="jop-Nl-uLE" firstAttribute="top" secondItem="ZhT-mN-8GI" secondAttribute="bottom" id="ysy-vl-FcR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Stats" id="glS-Ak-S1b">
@@ -82,7 +94,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="pieChartView" destination="9mb-7f-q93" id="2UM-bF-Szt"/>
+                        <outlet property="bannerView" destination="ZhT-mN-8GI" id="0jg-4I-JVB"/>
+                        <outlet property="pieChartView" destination="9mb-7f-q93" id="CRf-Q8-KfL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6fi-8g-eYb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -101,10 +114,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6zJ-Dq-muc">
-                                <rect key="frame" x="0.0" y="198" width="320" height="59"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l2C-YS-iDB">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -158,18 +167,28 @@
                                     <outlet property="delegate" destination="Gkq-nT-skO" id="ocG-Np-u81"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x5N-qC-js1" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="405" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="0Sb-Bs-Z6V"/>
+                                    <constraint firstAttribute="height" constant="50" id="0ga-Ex-cpD"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.96862745100000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="AXT-ll-lh1" firstAttribute="top" secondItem="x5N-qC-js1" secondAttribute="bottom" id="3Qy-YV-eUn"/>
                             <constraint firstItem="l2C-YS-iDB" firstAttribute="leading" secondItem="Lou-i4-14P" secondAttribute="leading" id="QQO-hR-wku"/>
                             <constraint firstAttribute="trailing" secondItem="l2C-YS-iDB" secondAttribute="trailing" id="S7Y-cx-Rf3"/>
+                            <constraint firstItem="x5N-qC-js1" firstAttribute="centerX" secondItem="Lou-i4-14P" secondAttribute="centerX" id="WWH-zb-Qeb"/>
                             <constraint firstItem="l2C-YS-iDB" firstAttribute="top" secondItem="Umh-K8-gTa" secondAttribute="bottom" id="jO1-hN-DTH"/>
                             <constraint firstItem="AXT-ll-lh1" firstAttribute="top" secondItem="l2C-YS-iDB" secondAttribute="bottom" id="sy5-pN-NrS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="List of Products" id="Ugn-tN-4eZ"/>
                     <connections>
-                        <outlet property="totalProducts" destination="6zJ-Dq-muc" id="5rj-Te-Wme"/>
+                        <outlet property="bannerView" destination="x5N-qC-js1" id="aRc-h3-gcc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OGv-cS-b9X" userLabel="First Responder" sceneMemberID="firstResponder"/>

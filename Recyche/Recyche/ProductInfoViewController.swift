@@ -11,14 +11,17 @@ import Alamofire
 import CloudKit
 import CoreData
 import CoreLocation
+import GoogleMobileAds
 
 let URLString = "http://www.searchupc.com/handlers/upcsearch.ashx?request_type=3"
 let access_token = "C6D5DA80-A126-4235-A35A-26E73FC64C2F"
 let UPC_code =  "037000088806"
 let UPC = "0892685001003"
 
+
 class ProductInfoViewController: UIViewController {
     
+    @IBOutlet weak var bannerView: GADBannerView!
     var scannedProduct: CKRecord!
     
     @IBOutlet weak var productImageView: UIImageView!
@@ -92,12 +95,21 @@ class ProductInfoViewController: UIViewController {
         
         addToPersonalDatabase(scannedProduct)
         
+        bannerView.adUnitID = "ca-app-pub-7645740474114618/2376789488"
+        bannerView.rootViewController = self
+        bannerView.loadRequest(GADRequest())
+        
     }
+    
+    
     
     @IBAction func toScanner(sender: AnyObject) {
         navigationController?.popToRootViewControllerAnimated(true)
     }
     
+    
+
+        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resour  ces that can be recreated.

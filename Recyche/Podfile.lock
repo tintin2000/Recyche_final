@@ -1,19 +1,22 @@
 PODS:
-  - Alamofire (3.1.3)
-  - Bolts (1.6.0):
-    - Bolts/AppLinks (= 1.6.0)
-    - Bolts/Tasks (= 1.6.0)
-  - Bolts/AppLinks (1.6.0):
+  - Alamofire (3.3.1)
+  - Bolts (1.7.0):
+    - Bolts/AppLinks (= 1.7.0)
+    - Bolts/Tasks (= 1.7.0)
+  - Bolts/AppLinks (1.7.0):
     - Bolts/Tasks
-  - Bolts/Tasks (1.6.0)
-  - Charts (2.1.6)
-  - FBSDKCoreKit (4.9.1):
+  - Bolts/Tasks (1.7.0)
+  - Charts (2.2.4):
+    - Charts/Core (= 2.2.4)
+  - Charts/Core (2.2.4)
+  - FBSDKCoreKit (4.10.1):
     - Bolts (~> 1.5)
-  - FBSDKLoginKit (4.9.1):
+  - FBSDKLoginKit (4.10.1):
     - FBSDKCoreKit
-  - FBSDKShareKit (4.9.1):
+  - FBSDKShareKit (4.10.1):
     - FBSDKCoreKit
-  - SwiftyJSON (2.3.1)
+  - Google-Mobile-Ads-SDK (7.7.1)
+  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - Alamofire (~> 3.1)
@@ -21,15 +24,17 @@ DEPENDENCIES:
   - FBSDKCoreKit (~> 4.9)
   - FBSDKLoginKit (~> 4.9)
   - FBSDKShareKit (~> 4.9)
+  - Google-Mobile-Ads-SDK (~> 7.5)
   - SwiftyJSON (~> 2.3)
 
 SPEC CHECKSUMS:
-  Alamofire: 9f93b56389e48def9220dd57d1f44b1927229a5a
-  Bolts: f52a250053bb517ca874523c3913776359ab3def
-  Charts: 5e1e5ac23898e5b09d226a2fc3e9d86bc281937e
-  FBSDKCoreKit: aee20b6d9855f15b618d4fddd1a5ad45f5a4a59d
-  FBSDKLoginKit: ec22dc49bd372b064e93d6773df4ffefb3a552a2
-  FBSDKShareKit: b8c8ef0ed173f9fc1b3c8df384a0202ce53008d4
-  SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
+  Charts: a9e735c83c6d376ade20f6612dcf0ba217394a49
+  FBSDKCoreKit: d2aaed5e9ab7d8d6301c533376a1fbff1cf3deb5
+  FBSDKLoginKit: 699ff169080e3072de4b9b0faca90bf23dc36deb
+  FBSDKShareKit: 2fd887cce0056bdda91f99b2021d724a4fed8e88
+  Google-Mobile-Ads-SDK: e27569901b58881d9a94b42f2c642739cfe3970a
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
 COCOAPODS: 0.39.0

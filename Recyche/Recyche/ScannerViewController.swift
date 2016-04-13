@@ -12,6 +12,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import CloudKit
 import CoreLocation
+import GoogleMobileAds
 
 class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate , CLLocationManagerDelegate {
 
@@ -23,6 +24,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     var scannedProduct: CKRecord!
     var barcodeScanned:((String) ->())?
     var firstTimeCheck = false
+   
     
     
     let locationManager = CLLocationManager()
@@ -63,8 +65,11 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         loadingView.frame = view.frame
         UIApplication.sharedApplication().keyWindow?.addSubview(loadingView)
         initializeLocationManager()
+       
         
     }
+    
+  
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -228,6 +233,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
                 self.instructionsView.removeFromSuperview()
         }
     }
+ 
     
     // MARK: - Class Functions
     
@@ -306,7 +312,10 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
                         self.performSegueWithIdentifier("toAddProductSegue", sender: self)
                         self.loadingIndicator.stopAnimating()
                         self.loadingView.hidden = true
+                        
+                        
                     })
+                
                 }
                 else {
                     // Error
@@ -320,6 +329,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
                         self.performSegueWithIdentifier("toProductInfoSegue", sender: self)
                         self.loadingIndicator.stopAnimating()
                         self.loadingView.hidden = true
+                        
                     })
                 }
             }

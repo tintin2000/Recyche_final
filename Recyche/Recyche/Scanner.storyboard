@@ -349,10 +349,20 @@
                                     <constraint firstItem="kxo-Gm-GIH" firstAttribute="leading" secondItem="Rq7-0a-yxq" secondAttribute="leading" constant="64" id="4p2-lW-LO3"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tlw-Bf-QDv" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="405" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="KOS-d8-Uuu"/>
+                                    <constraint firstAttribute="width" constant="320" id="a0B-X6-5ky"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.96862745100000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="hrT-K8-8Kl" firstAttribute="top" secondItem="Tlw-Bf-QDv" secondAttribute="bottom" id="2Qd-12-MwT"/>
                             <constraint firstItem="hrT-K8-8Kl" firstAttribute="top" secondItem="Rq7-0a-yxq" secondAttribute="bottom" constant="8" symbolic="YES" id="Ho7-U4-cIN"/>
+                            <constraint firstItem="Tlw-Bf-QDv" firstAttribute="centerX" secondItem="qdN-4o-ZlJ" secondAttribute="centerX" id="J1G-Iv-FTs"/>
                             <constraint firstItem="Rq7-0a-yxq" firstAttribute="leading" secondItem="qdN-4o-ZlJ" secondAttribute="leadingMargin" id="WrN-0g-4yx"/>
                             <constraint firstItem="Rq7-0a-yxq" firstAttribute="trailing" secondItem="qdN-4o-ZlJ" secondAttribute="trailingMargin" id="gve-8f-uGc"/>
                             <constraint firstItem="Rq7-0a-yxq" firstAttribute="top" secondItem="p9b-Gl-jit" secondAttribute="bottom" constant="8" symbolic="YES" id="hH4-lY-uEg"/>
@@ -366,6 +376,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bannerView" destination="Tlw-Bf-QDv" id="w8y-lG-x0i"/>
                         <outlet property="materialDetailLabel" destination="eTj-6F-q2m" id="uzH-LG-UJY"/>
                         <outlet property="materialLabel" destination="nvF-ei-r5Y" id="Sna-p4-gVK"/>
                         <outlet property="productImageView" destination="kxo-Gm-GIH" id="XiX-dX-myj"/>
@@ -637,6 +648,6 @@
         <image name="scannericon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="m8x-lW-tSk"/>
+        <segue reference="4ul-7p-4qU"/>
     </inferredMetricsTieBreakers>
 </document>
