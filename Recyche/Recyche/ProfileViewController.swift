@@ -7,28 +7,17 @@
 //
 
 import UIKit
-import FBSDKCoreKit
-import FBSDKLoginKit
 
-class ProfileViewController: UIViewController, FBSDKLoginButtonDelegate {
+
+class ProfileViewController: UIViewController{
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
     
-    let logoutButton = FBSDKLoginButton()
-    logoutButton.center = CGPoint(x: view.center.x, y: view.subviews[0].subviews[0].bounds.height + 20)
-    logoutButton.delegate = self
-    view.addSubview(logoutButton)
+  
   }
   
-  func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-  }
-  
-  func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-    navigationController?.popToRootViewControllerAnimated(true)
-    NSUserDefaults.standardUserDefaults().removeObjectForKey("id")
-  }
-  
+
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.

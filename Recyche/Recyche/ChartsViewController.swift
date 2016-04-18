@@ -31,6 +31,9 @@ class ChartsViewController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       tabBarController?.delegate = self
+        
+        
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-Medium", size: 17)!]
     
      print("Google Mobile Ads SDK version: " + GADRequest.sdkVersion())
@@ -170,6 +173,14 @@ class ChartsViewController: UIViewController  {
     
     
     
+    @IBAction func guideBarButtonPressed(sender: AnyObject) {
+        
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        let myVC = storyboard.instantiateViewControllerWithIdentifier("profileId")
+        myVC.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
+       navigationController?.pushViewController(myVC, animated: true)
+        
+    }
 
     // MARK: - Navigation
 
@@ -183,4 +194,17 @@ class ChartsViewController: UIViewController  {
         // Pass the selected object to the new view controller.
     }
 
+}
+
+extension ChartsViewController : UITabBarControllerDelegate {
+    
+    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
+        if viewController == self.navigationController {
+            self.navigationController?.popToRootViewControllerAnimated(false)
+
+        }
+    }
+    
+
+    
 }

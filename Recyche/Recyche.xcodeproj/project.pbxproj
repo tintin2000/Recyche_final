@@ -18,7 +18,6 @@
 		FA0DC43E1BC31FDE00096FF8 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DC43C1BC31FDE00096FF8 /* Product.swift */; };
 		FA124BD71BD2A53700913142 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA124BD61BD2A53700913142 /* Main.storyboard */; };
 		FA124BF91BD3223300913142 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA124BF81BD3223300913142 /* Profile.storyboard */; };
-		FA124BFB1BD3484500913142 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA124BFA1BD3484500913142 /* ProfileTableViewController.swift */; };
 		FA124C1B1BD3507400913142 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA124C1A1BD3507400913142 /* ProfileViewController.swift */; };
 		FA124C1E1BD35F8900913142 /* Stats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA124C1D1BD35F8900913142 /* Stats.storyboard */; };
 		FA124C201BD35FC500913142 /* Scanner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA124C1F1BD35FC500913142 /* Scanner.storyboard */; };
@@ -63,7 +62,6 @@
 		FA0DC43C1BC31FDE00096FF8 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		FA124BD61BD2A53700913142 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FA124BF81BD3223300913142 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		FA124BFA1BD3484500913142 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		FA124C1A1BD3507400913142 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FA124C1D1BD35F8900913142 /* Stats.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Stats.storyboard; sourceTree = "<group>"; };
 		FA124C1F1BD35FC500913142 /* Scanner.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Scanner.storyboard; sourceTree = "<group>"; };
@@ -170,7 +168,6 @@
 				FA1BAED21BAF163400D24788 /* ChartsViewController.swift */,
 				FA1BAED41BAF164B00D24788 /* ListOfProductsViewController.swift */,
 				FA124C1A1BD3507400913142 /* ProfileViewController.swift */,
-				FA124BFA1BD3484500913142 /* ProfileTableViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -326,7 +323,6 @@
 				FA0DC43E1BC31FDE00096FF8 /* Product.swift in Sources */,
 				3B5600DE1C6B93570072061A /* Reachability.swift in Sources */,
 				FA1BAED51BAF164B00D24788 /* ListOfProductsViewController.swift in Sources */,
-				FA124BFB1BD3484500913142 /* ProfileTableViewController.swift in Sources */,
 				7CCEA0191BADB48A00F6D423 /* Recyche.xcdatamodeld in Sources */,
 				FA1BAECD1BAF15FB00D24788 /* ProductInfoViewController.swift in Sources */,
 				FAE29D851BBB6412003325DA /* LoginViewController.swift in Sources */,

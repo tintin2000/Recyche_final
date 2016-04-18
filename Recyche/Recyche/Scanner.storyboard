@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="width" constant="28" id="cVd-gB-vY8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ao-Nd-y2E">
@@ -157,8 +157,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Scanner" id="M1B-uq-doa">
                         <barButtonItem key="backBarButtonItem" title="Scanner" id="pdW-Ws-yis"/>
-                        <barButtonItem key="rightBarButtonItem" image="User Male" id="3fa-Pu-f0V">
+                        <barButtonItem key="rightBarButtonItem" image="GuideBarButton" id="3fa-Pu-f0V">
                             <connections>
+                                <action selector="guideBarButtonPressed:" destination="giw-fh-jhR" id="LD7-de-zco"/>
                                 <segue destination="j5d-wh-yka" kind="push" id="tH4-SU-bLO"/>
                             </connections>
                         </barButtonItem>
@@ -639,15 +640,15 @@
     <resources>
         <image name="Delete" width="25" height="25"/>
         <image name="Greentech Filled" width="32" height="32"/>
+        <image name="GuideBarButton" width="25" height="25"/>
         <image name="Info" width="25" height="25"/>
         <image name="NoImage" width="500" height="500"/>
-        <image name="User Male" width="25" height="25"/>
         <image name="barcode" width="87" height="64"/>
         <image name="helpicon" width="22" height="22"/>
         <image name="recychelogo" width="75" height="75"/>
         <image name="scannericon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4ul-7p-4qU"/>
+        <segue reference="m8x-lW-tSk"/>
     </inferredMetricsTieBreakers>
 </document>

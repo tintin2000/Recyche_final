@@ -421,6 +421,12 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         
     }
 
+    @IBAction func guideBarButtonPressed(sender: AnyObject) {
+        
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        let myVC = storyboard.instantiateViewControllerWithIdentifier("profileId")
+        self.presentViewController(myVC, animated: true, completion: nil)
+    }
     
     // MARK: - Navigation
 

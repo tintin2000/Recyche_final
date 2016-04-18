@@ -10,14 +10,27 @@ import UIKit
 import GoogleMobileAds
 
 
+
+
+
 class ListOfProductsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var bannerView: GADBannerView!
 
+    @IBOutlet weak var totalProductView: UIView!
+    @IBOutlet weak var totalListLabel: UILabel!
+  
+    @IBOutlet weak var totalPlasticLabel: UILabel!
+    @IBOutlet weak var totalMetalLabel: UILabel!
+    @IBOutlet weak var totalPaperLabel: UILabel!
+    @IBOutlet weak var totalGlassLabel: UILabel!
+    @IBOutlet weak var totalCardboardLabel: UILabel!
+
+    @IBOutlet weak var totalCartonLabel: UILabel!
     var products: [Product]!
-    var someDict = [Int: String]()
-    
- 
+    var countDict:[String:Int] = [String:Int]()
+  
+
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -30,10 +43,19 @@ class ListOfProductsViewController: UIViewController, UITableViewDataSource, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
+        countDict["PLASTIC"] = 0
+        countDict["CARTON"] = 0
+        countDict["GLASS"] = 0
+        countDict["PAPER"] = 0
+        countDict["CARDBOARD"] = 0
+        countDict["METAL"] = 0
+        
+     
+        
+        
 
         // Do any additional setup after loading the view.
-        bannerView.adUnitID = "ca-app-pub-7645740474114618/9505580289"
+        bannerView.adUnitID = "ca-app-pub-7645740474114618/8624276289"
         bannerView.rootViewController = self
         bannerView.loadRequest(GADRequest())
         
@@ -41,12 +63,27 @@ class ListOfProductsViewController: UIViewController, UITableViewDataSource, UIT
             
         {
             let materialItem = (code: materialForCode(product.material!))
-            print("this" ,materialItem)
+            
+                
+                countDict[materialItem] = (countDict[materialItem] ?? 0) + 1
+            print(countDict[materialItem]!)
+    
         }
+     
         
+    totalListLabel.text = String(products.count)
+    totalPlasticLabel.text = String(countDict["PLASTIC"]!)
+    totalCartonLabel.text = String(countDict["CARTON"]!)
+    totalGlassLabel.text = String(countDict["GLASS"]!)
+    totalPaperLabel.text   = String(countDict["PAPER"]!)
+    totalCardboardLabel.text = String(countDict["CARDBOARD"]!)
+    totalMetalLabel.text = String (countDict["METAL"]!)
+     
         
-        
+
     }
+    
+
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -78,6 +115,16 @@ class ListOfProductsViewController: UIViewController, UITableViewDataSource, UIT
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func guideBarButtonPressed(sender: AnyObject) {
+        
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        let myVC = storyboard.instantiateViewControllerWithIdentifier("profileId")
+        myVC.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
+        navigationController?.pushViewController(myVC, animated: true)
+    }
+    
+
+    
 
     /*
     // MARK: - Navigation
@@ -90,3 +137,5 @@ class ListOfProductsViewController: UIViewController, UITableViewDataSource, UIT
     */
 
 }
+
+
