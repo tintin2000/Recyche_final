@@ -10,10 +10,23 @@ import UIKit
 
 
 class ProfileViewController: UIViewController{
+    
+     @IBOutlet weak var scrollView: UIScrollView!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let contentWidth = scrollView.bounds.width
+        let contentHeight = scrollView.bounds.height * 3
+        scrollView.contentSize = CGSizeMake(contentWidth, contentHeight)
+        
+    }
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
     
+ 
   
   }
   
