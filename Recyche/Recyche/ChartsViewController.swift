@@ -10,7 +10,6 @@ import UIKit
 import CoreData
 import Charts
 
-
 class ChartsViewController: UIViewController  {
     
     var products: [Product]!
@@ -36,7 +35,7 @@ class ChartsViewController: UIViewController  {
         
         let image = pieChartView.getChartImage(transparent:true)
         let activityController = UIActivityViewController(activityItems:
-            ["My Recyling Chart from Recyche", image], applicationActivities: nil)
+            ["My Recyling Chart from Recyche", image!], applicationActivities: nil)
         
         self.presentViewController(activityController, animated: true,
             completion: nil)
