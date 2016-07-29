@@ -17,6 +17,7 @@ let cityToFind = [  "New York","Atlanta","Los Angeles", "San Francisco" ,"San An
 
 let cityToFind6 = [ "Chicago", "Philadelphia", "Phoenix", "Dallas", "Indianapolis", " Washington DC", "Orlando" ,"St. Louis" , "Pittsburgh", "Newark",
                     "Lubbock"]
+
 let cityToFindGlass = ["Santa Fe" , "Charleston" , "Harrisburg" ,"Baton Rouge",  "Houston" ]
 
 let recycleCodeUnknown = ["paper": "Please Check Local Recycling Rules to Determine if this type of material is recyclable","paper book cover": "Please Check Local Recycling Rules to Determine if this type of material is recyclable.", "newsprint": "Please Check Local Recycling Rules to Determine if this type of material is recyclable.", "cardboard": "Please Check Local Recycling Rules to Determine if this type of material is recyclable.", "glass": "Please Check Local Recycling Rules to Determine if this type of material is recyclable", "plastic": "Please Check Local Recycling Rules to Determine if this type of material is recyclable.", "carton": "Please Check Local Recycling Rules to Determine if this type of material is recyclable", "metal": "Please Check Local Recycling Rules to Determine if this type of material is recyclable"]
