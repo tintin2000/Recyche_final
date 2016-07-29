@@ -152,11 +152,16 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
             
             if  let cityInfo = self.placemark.locality{
                 var cityInfoCopy: Int
+                
                 if cityToFind.contains(cityInfo){
                     cityInfoCopy = 1
                 }  else if cityToFind6.contains(cityInfo){
-                    cityInfoCopy =  6
-                } else {
+                    cityInfoCopy = 6
+                } else if cityToFindGlass.contains(cityInfo) {
+                    cityInfoCopy = 2
+                }
+                
+                else {
                     cityInfoCopy =  0
                 }
                 
