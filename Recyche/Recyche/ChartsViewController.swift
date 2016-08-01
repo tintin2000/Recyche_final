@@ -10,7 +10,6 @@ import UIKit
 import CoreData
 import Charts
 
-
 class ChartsViewController: UIViewController  {
     
     var products: [Product]!
@@ -36,7 +35,7 @@ class ChartsViewController: UIViewController  {
         
         let image = pieChartView.getChartImage(transparent:true)
         let activityController = UIActivityViewController(activityItems:
-            ["My Recyling Chart from Recyche", image], applicationActivities: nil)
+            ["My Recyling Chart from Recyche", image!], applicationActivities: nil)
         
         self.presentViewController(activityController, animated: true,
             completion: nil)
@@ -63,21 +62,33 @@ class ChartsViewController: UIViewController  {
             dataEntries.append(dataEntry)
         }
         
-        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "Products Recycled")
-        let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
-        pieChartView.data = nil
-        pieChartView.data = pieChartData
-        
+        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: nil)
+//        let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
+//        pieChartView.data = nil
+//        pieChartView.data = pieChartData
+//        
         var colors: [UIColor] = []
         
         for code in dataPoints {
             colors.append(colorForCode(code))
-        }
+       
         
         pieChartDataSet.colors = colors
-
+             }
+        let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
+        pieChartView.data = nil
+        pieChartView.data = pieChartData
+        pieChartView.legend.enabled = true
+        pieChartView.legend.position = .PiechartCenter
+    
     }
     
+    
+    
+  
+    
+
+
     func setChartData(unit: NSCalendarUnit) {
         
         var chartData: [(code: String, amount: Int)] = []

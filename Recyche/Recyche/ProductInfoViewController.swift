@@ -52,8 +52,13 @@ class ProductInfoViewController: UIViewController {
                     
                     recycleInstructionsTextView.text! = instructionForCode6(code)
                      recycleInstructionsTextView.font = fontStyle
-                    
-                } else if city  == 0 {
+                }
+                else if city == 2 {
+                    recycleInstructionsTextView.text! = instructionForCodeGlass(code)
+                    recycleInstructionsTextView.font = fontStyle
+                }
+                
+                else if city  == 0 {
                     
                     recycleInstructionsTextView.text! = instructionForCodeUknown(code)
                      recycleInstructionsTextView.font = fontStyle

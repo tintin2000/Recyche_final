@@ -20,8 +20,22 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     loginButton.center = CGPoint(x: view.center.x, y: view.center.y + 100)
     loginButton.delegate = self
     self.view.addSubview(loginButton)
+  
     
   }
+
+    
+    
+    @IBAction func goToAppWithoutSignupButton(sender: UIButton) {
+        
+    
+        
+         self.performSegueWithIdentifier("unwindLoginSegue", sender: self)
+    }
+ 
+    
+    
+    
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
@@ -37,6 +51,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
       FBSDKGraphRequest(graphPath: "me", parameters: nil).startWithCompletionHandler() { result in
         if error == nil {
           NSUserDefaults.standardUserDefaults().setValue(result.1.valueForKey("id") as! String, forKey: "id")
+            print(NSUserDefaults.standardUserDefaults().valueForKey("id"))
         } else {
           print("FBSDKGraphError: \(error.localizedDescription)")
         }
